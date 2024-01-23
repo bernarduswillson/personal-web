@@ -15,12 +15,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
         <head />
-        <body>
+        <body className="font-catamaran">
           <ThemeProvider
             attribute="class"
             defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
           >
             {children}
           </ThemeProvider>
