@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 const Navbar = (): JSX.Element => {
   return (
-    <nav className="h-[100px] w-full flex items-center justify-between">
+    <nav className="h-[100px] w-full flex items-center justify-between fixed z-50">
       <div className="flex justify-start ml-7 items-center">
         <Logo />
         <span className="translate-y-[2px] ml-2 text-[30px] font-extrabold tracking-[3px]">
