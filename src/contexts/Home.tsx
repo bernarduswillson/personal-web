@@ -1,7 +1,7 @@
 "use client"
 
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from "framer-motion";
 
 import Laptop from '@/assets/images/Hero/Laptop';
@@ -9,7 +9,18 @@ import Dots from '@/components/Icon/Dots';
 import Diamond from '@/assets/images/Hero/Diamond.svg';
 
 const Hero = (): JSX.Element => {
-  const screenHeight = window.innerHeight;
+  const [screenHeight, setScreenHeight] = useState(0);
+  useEffect(() => {
+    const updateScreenHeight = () => {
+      setScreenHeight(window.innerHeight);
+    };
+    updateScreenHeight();
+    window.addEventListener('resize', updateScreenHeight);
+    return () => {
+      window.removeEventListener('resize', updateScreenHeight);
+    };
+  }, []);
+
   const { scrollY } = useScroll();
   const yt = useTransform(scrollY, [0, screenHeight], [0, -100]);
   const y1 = useTransform(scrollY, [0, screenHeight], [0, -300]);
