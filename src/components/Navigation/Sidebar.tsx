@@ -55,7 +55,7 @@ const Sidebar = (): JSX.Element => {
   }, []);
 
   return (
-    <aside className="fixed h-screen flex items-center ml-7 z-50">
+    <aside className="fixed h-screen items-center ml-7 z-50 lg:flex hidden">
       <div className="h-fit flex relative">
         <div className="w-[1px] bg-primary opacity-60"></div>
         <motion.div

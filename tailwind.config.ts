@@ -75,11 +75,20 @@ const config = {
             opacity: "1",
           },
         },
+        "up-down": {
+          "0%, 100%": {
+            transform: "translateY(0px)",
+          },
+          "50%": {
+            transform: "translateY(-30px)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "blink": "blink 1s infinite",
+        "up-down": "up-down 3s ease-in-out infinite",
       },
       fontFamily: {
         catamaran: ["Catamaran", "sans-serif"],

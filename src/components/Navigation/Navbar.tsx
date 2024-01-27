@@ -12,11 +12,11 @@ const Navbar = (): JSX.Element => {
         </span>
       </div>
       <div className="justify-end flex mr-7 items-center">
-        <Button 
+        {/* <Button 
           className="font-bold text-[15px] border-[3px] px-7 py-2 mr-7"
           variant="outline">
           Contact
-        </Button>
+        </Button> */}
         <ToggleMode />
       </div>
     </nav>
