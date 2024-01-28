@@ -3,10 +3,15 @@
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from "framer-motion";
+import { useTheme } from 'next-themes';
 
 import Laptop from '@/assets/images/Hero/Laptop';
 import Dots from '@/components/Icon/Dots';
 import Diamond from '@/assets/images/Hero/Diamond.svg';
+import Github from '@/components/Icon/Github'
+import Linkedin from '@/components/Icon/Linkedin';
+import Email from '@/components/Icon/Email';
+import Whatsapp from '@/components/Icon/Whatsapp';
 
 const Hero = (): JSX.Element => {
   const [screenHeight, setScreenHeight] = useState(0);
@@ -38,6 +43,15 @@ const Hero = (): JSX.Element => {
     }
   };
 
+  const { setTheme, resolvedTheme } = useTheme();
+  const [loading, setLoading] = useState(true);
+  const [mode, setMode] = useState(resolvedTheme);
+
+  useEffect(() => {
+    setMode(resolvedTheme);
+    setLoading(false);
+  }, [resolvedTheme]);
+
   return (
     <div id="Home" className='min-h-screen relative dark:bg-black bg-[#FFFFFF] transition duration-400 flex items-center justify-center'>
       <div className="w-full lg:flex-row-reverse lg:flex">
@@ -46,13 +60,43 @@ const Hero = (): JSX.Element => {
         </div>
         <motion.div className="lg:w-1/2 lg:pl-[10vw] lg:mx-0 mx-[5vw] flex flex-col justify-center text-center lg:text-start" style={{ y: yt }}>
           <div className="text-2xl font-bold">
-            Hi, I’m Bernardus Willson.
+            Hi, I’m Willson.
           </div>
           <div className="text-[50px] font-extrabold leading-[50px] mt-2">
-            A Front-End Developer.
+            A Computer Science <br/>Student.
           </div>
-          <div className="text-lg mt-5">
-            Undergraduate Computer Science student at Bandung Institute of Technology
+          <div className="text-lg mt-2">
+            at Bandung Institute of Technology, Indonesia.
+          </div>
+          <div className='mt-5 gap-7 flex lg:justify-start justify-center'>
+            <a href="https://github.com/bernarduswillson" className='hover:opacity-50 transition-all duration-300'>
+              { mode === 'dark' && !loading ? (
+                <Github width={40} height={40} fillColor="white" />
+              ) : (
+                <Github width={40} height={40} fillColor="black" />
+              )}
+            </a>
+            <a href="https://www.linkedin.com/in/bernarduswillson/" className='hover:opacity-50 transition-all duration-300'>
+              { mode === 'dark' && !loading ? (
+                <Linkedin width={40} height={40} fillColor="white" />
+              ) : (
+                <Linkedin width={40} height={40} fillColor="black" />
+              )}
+            </a>
+            <a href="mailto:bernardus.willson@gmail.com" className='hover:opacity-50 transition-all duration-300'>
+              { mode === 'dark' && !loading ? (
+                <Email width={40} height={40} fillColor="white" />
+              ) : (
+                <Email width={40} height={40} fillColor="black" />
+              )}
+            </a>
+            <a href="https://wa.me/6281284085584" className='hover:opacity-50 transition-all duration-300'>
+              { mode === 'dark' && !loading ? (
+                <Whatsapp width={40} height={40} fillColor="white" />
+              ) : (
+                <Whatsapp width={40} height={40} fillColor="black" />
+              )}
+            </a>
           </div>
           <div 
             className="text-lg mt-5 inline-block cursor-pointer relative lg:w-fit w-full z-[50] hover:opacity-60 transition-all duration-500 ease-in-out"
@@ -66,7 +110,7 @@ const Hero = (): JSX.Element => {
               About Me
             </span>
             <span 
-              className={`ml-2 font-bold transition-all duration-400 ease-in-out absolute z-[50] rotate-90 ${onHover ? 'lg:rotate-90' : 'lg:rotate-0'}`}
+              className={`text-[30px] mt-[-1px] ml-2 font-semibold transition-all duration-400 ease-in-out absolute z-[50] rotate-90 ${onHover ? 'lg:rotate-90' : 'lg:rotate-0'}`}
             >
               &gt;
             </span>
