@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from 'react';
+
 import Laptop1 from '@/assets/images/Hero/Laptop/1.svg';
 import Laptop2 from '@/assets/images/Hero/Laptop/2.svg';
 import Laptop3 from '@/assets/images/Hero/Laptop/3.svg';
@@ -42,7 +43,7 @@ const Laptop = (): JSX.Element => {
             objectFit: 'contain',
             width: '100%',
             height: '100%',
-            maxWidth: '800px',
+            maxWidth: '700px',
             maxHeight: '100%',
           }}
         />

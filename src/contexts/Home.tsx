@@ -55,18 +55,18 @@ const Hero = (): JSX.Element => {
             Undergraduate Computer Science student at Bandung Institute of Technology
           </div>
           <div 
-            className="text-lg mt-5 inline-block cursor-pointer relative lg:w-fit w-full z-[50]"
+            className="text-lg mt-5 inline-block cursor-pointer relative lg:w-fit w-full z-[50] hover:opacity-60 transition-all duration-500 ease-in-out"
             onClick={handleScroll}
             onMouseEnter={() => setOnHover(true)}
             onMouseLeave={() => setOnHover(false)}
           >
             <span 
-              className="font-bold bg-gradient-to-r from-[#FF8335] to-[#D849B0] text-transparent bg-clip-text"
+              className="font-bold bg-gradient-to-r from-[#FF8335] to-[#D849B0] text-transparent bg-clip-text z-[50]"
             >
               About Me
             </span>
             <span 
-              className={`ml-2 transition-all duration-500 ease-in-out absolute ${onHover ? 'rotate-90' : 'rotate-0'}`}
+              className={`ml-2 font-bold transition-all duration-400 ease-in-out absolute z-[50] rotate-90 ${onHover ? 'lg:rotate-90' : 'lg:rotate-0'}`}
             >
               &gt;
             </span>
@@ -77,13 +77,13 @@ const Hero = (): JSX.Element => {
       <div className='absolute right-0 opacity-10 sm:opacity-30'>
         <Dots rows={8} columns={30} dotSize={3} dotColor="primary" spacing={40}/>
       </div>
-      <motion.div className='absolute top-[5vw] right-[20vw] lg:w-[100px] rotate-[70deg] w-[60px]' style={{ y: y1, rotate: r1 }}>
+      <motion.div className='absolute top-[5vw] right-[10vw] lg:w-[5vw] rotate-[70deg] w-[60px]' style={{ y: y1, rotate: r1 }}>
         <Image src={Diamond} alt="Diamond" />
       </motion.div>
-      <motion.div className='absolute lg:top-[30vh] lg:right-[10vw] lg:w-[80px] rotate-[-50deg] top-[40vh] left-[5vw] w-[50px]' style={{ y: y2, rotate: r2 }}>
+      <motion.div className='absolute lg:top-[30vh] lg:w-[4vw] rotate-[-50deg] top-[40vh] left-[5vw] w-[50px] z-[6]' style={{ y: y2, rotate: r2 }}>
         <Image src={Diamond} alt="Diamond" />
       </motion.div>
-      <motion.div className='absolute lg:bottom-[5vw] lg:left-[30vw] lg:w-[200px] bottom-[5vw] right-[5vw] w-[100px]' style={{ y: y3, rotate: r3 }}>
+      <motion.div className='absolute lg:bottom-[5vw] lg:left-[30vw] lg:w-[8vw] bottom-[5vw] right-[5vw] w-[100px] z-[6]' style={{ y: y3, rotate: r3 }}>
         <Image src={Diamond} alt="Diamond" />
       </motion.div>
     </div>
