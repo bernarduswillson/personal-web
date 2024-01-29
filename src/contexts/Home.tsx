@@ -55,14 +55,14 @@ const Hero = (): JSX.Element => {
   return (
     <div id="Home" className='min-h-screen relative dark:bg-black bg-[#FFFFFF] transition duration-400 flex items-center justify-center'>
       <div className="w-full lg:flex-row-reverse lg:flex">
-        <div className="z-[5] mb-[5vh] lg:mb-0 lg:w-1/2 relative select-none pointer-events-none flex justify-center">
+        <div className="z-[5] mx-[5vw] mb-[5vh] lg:mb-0 lg:w-1/2 relative select-none pointer-events-none flex justify-center">
           <Laptop />
         </div>
         <motion.div className="lg:w-1/2 lg:pl-[10vw] lg:mx-0 mx-[5vw] flex flex-col justify-center text-center lg:text-start" style={{ y: yt }}>
           <div className="text-2xl font-bold">
             Hi, I’m Willson.
           </div>
-          <div className="text-[50px] font-extrabold leading-[50px] mt-2">
+          <div className=" text-[40px] lg:text-[50px] font-extrabold leading-[50px] mt-2">
             A Computer Science <br/>Student.
           </div>
           <div className="text-lg mt-2">
