@@ -3,7 +3,7 @@ import React from 'react';
 interface GithubProps {
   width: number;
   height: number;
-  fillColor: string;
+  fillColor?: string;
 }
 
 const Github = ({ width, height, fillColor }: GithubProps) => {

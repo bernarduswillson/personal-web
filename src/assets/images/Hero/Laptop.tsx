@@ -1,7 +1,9 @@
 "use client";
 
+// Imports
 import { useState, useEffect } from 'react';
 
+// Assets
 import Laptop1 from '@/assets/images/Hero/Laptop/1.svg';
 import Laptop2 from '@/assets/images/Hero/Laptop/2.svg';
 import Laptop3 from '@/assets/images/Hero/Laptop/3.svg';
@@ -20,8 +22,8 @@ const laptops = [
 ];
 
 const Laptop = (): JSX.Element => {
+  // Animation handler
   const [currentImage, setCurrentImage] = useState(0);
-
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImage((prevImage) => (prevImage + 1) % laptops.length);

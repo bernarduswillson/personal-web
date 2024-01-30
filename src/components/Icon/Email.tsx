@@ -3,7 +3,7 @@ import React from 'react';
 interface EmailProps {
   width: number;
   height: number;
-  fillColor: string;
+  fillColor?: string;
 }
 
 const Email = ({ width, height, fillColor }: EmailProps) => {

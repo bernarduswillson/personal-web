@@ -3,7 +3,7 @@ import React from 'react';
 interface WhatsappProps {
   width: number;
   height: number;
-  fillColor: string;
+  fillColor?: string;
 }
 
 const Whatsapp = ({ width, height, fillColor }: WhatsappProps) => {

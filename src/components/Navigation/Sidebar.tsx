@@ -1,13 +1,18 @@
 "use client"
 
+// Imports
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
+
+// Utils
+import { scrollToSection } from '@/lib/scroll';
 
 interface Menu {
   text: string;
   section: string;
 }
 
+// Menu list
 const MENU_LIST: Menu[] = [
   {
     text: '01',
@@ -24,6 +29,7 @@ const MENU_LIST: Menu[] = [
 ];
 
 const Sidebar = (): JSX.Element => {
+  // Scrollbar progress
   const { scrollYProgress } = useScroll();
   const [hoveredSection, setHoveredSection] = useState<string | null>(null);
   const scaleY = useSpring(scrollYProgress, {
@@ -31,28 +37,6 @@ const Sidebar = (): JSX.Element => {
     damping: 30,
     restDelta: 0.001,
   });
-
-  const handleMenuClick = (section: string) => {
-    setHoveredSection(section);
-    const targetElement = document.getElementById(section);
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash.substr(1);
-      setHoveredSection(hash);
-      handleMenuClick(hash);
-    };
-
-    window.addEventListener('hashchange', handleHashChange);
-
-    return () => {
-      window.removeEventListener('hashchange', handleHashChange);
-    };
-  }, []);
 
   return (
     <aside className="fixed h-screen items-center ml-7 z-50 lg:flex hidden">
@@ -69,7 +53,7 @@ const Sidebar = (): JSX.Element => {
               className={`flex relative cursor-pointer transition duration-300 ${
                 hoveredSection === menu.section ? 'hover:bg-primary hover:text-secondary' : ''
               }`}
-              onClick={() => handleMenuClick(menu.section)}
+              onClick={() => scrollToSection(menu.section)}
               onMouseEnter={() => setHoveredSection(menu.section)}
               onMouseLeave={() => setHoveredSection(null)}
             >

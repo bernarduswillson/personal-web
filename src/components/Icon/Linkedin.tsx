@@ -3,7 +3,7 @@ import React from 'react';
 interface LinkedinProps {
   width: number;
   height: number;
-  fillColor: string;
+  fillColor?: string;
 }
 
 const Linkedin = ({ width, height, fillColor }: LinkedinProps) => {

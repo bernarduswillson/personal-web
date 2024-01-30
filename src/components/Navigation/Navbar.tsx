@@ -1,3 +1,4 @@
+// Components
 import Logo from "@/components/Icon/Logo";
 import ToggleMode from "@/components/ui/toggleMode";
 import { Button } from "@/components/ui/button";
