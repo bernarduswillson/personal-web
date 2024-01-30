@@ -4,6 +4,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useState, useEffect } from 'react';
 import Image from "next/image";
+import Link from "next/link";
 
 // Utils
 import { getSectionHeight } from '@/lib/sectionHeight';
@@ -13,6 +14,7 @@ import Dots from '@/components/Icon/Dots';
 import Photo from '@/assets/images/About/Photo.webp';
 import Code from '@/assets/images/Illustration/Code.svg';
 import Diamond from '@/assets/images/Illustration/Diamond.svg';
+import { Button } from "@/components/ui/button";
 
 const About = (): JSX.Element => {
   // Hero and About's section height
@@ -59,7 +61,7 @@ const About = (): JSX.Element => {
                 src={Photo}
                 alt="Photo"
                 placeholder="blur"
-                className="rounded-[200px]"
+                className="rounded-[50px]"
               />
             </div>
           </motion.div>
@@ -68,7 +70,7 @@ const About = (): JSX.Element => {
             className="lg:w-1/2 lg:pr-[10vw] lg:px-0 px-[10vw] lg:flex lg:flex-col lg:justify-center" 
             style={{ y: yt }}
           >
-            <div className="text-[50px] font-extrabold leading-[50px] mb-5 text-center lg:text-left">
+            <div className="text-[40px] sm:text-[50px] font-extrabold leading-[50px] mb-5 text-center lg:text-left">
               I’m Bernardus Willson.
             </div>
             <div className="justify-center flex lg:hidden mb-5 z-[10]">
@@ -78,7 +80,7 @@ const About = (): JSX.Element => {
                   src={Photo}
                   alt="Photo"
                   placeholder="blur"
-                  className="rounded-[200px]"
+                  className="rounded-[50px]"
                   style={{
                     objectFit: 'contain',
                     width: '100%',
@@ -88,13 +90,22 @@ const About = (): JSX.Element => {
                 />
               </div>
             </div>
-            <div className="text-xl font-normal lg:text-2xl lg:font-semibold text-center lg:text-left leading-tight sm:leading-normal">
+            <div className="text-lg font-normal sm:text-xl lg:text-2xl opacity-80 text-center lg:text-left leading-tight sm:leading-normal">
               <div>
-                Currently in my 6th semester and interested in computer-related things such as web development and software development. 
+                Currently in my 6th semester and interested in computer-related things such as web development and software development.
               </div>
-              <div className="mt-3">
+              <div className="mt-2 hidden sm:block">
                 I consistently seek opportunities to develop my soft and hard skills through volunteers, committees, and projects.
               </div>
+            </div>
+            <div className="flex justify-center lg:justify-start">
+              <Link href="/next.svg">
+                <Button
+                  className="mt-5 text-lg font-semibold"
+                >
+                  Download CV
+                </Button>
+              </Link>
             </div>
           </motion.div>
         </div>

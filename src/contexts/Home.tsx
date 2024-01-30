@@ -110,7 +110,7 @@ const Hero = (): JSX.Element => {
               <a
                 key={index}
                 href={link.href}
-                className='hover:opacity-50 transition-all duration-300'
+                className='hover:opacity-50 transition-all duration-300 hover:scale-110'
               >
                 {mode === 'dark' && !loading ? (
                   React.cloneElement(link.icon, { fillColor: "white" })
@@ -122,7 +122,7 @@ const Hero = (): JSX.Element => {
           </div>
 
           <div 
-            className="text-lg mt-5 inline-block cursor-pointer relative lg:w-fit w-full z-[50] hover:opacity-60 transition-all duration-500 ease-in-out"
+            className="text-lg mt-5 inline-block cursor-pointer relative lg:w-fit w-full z-[50] hover:opacity-60 transition-all duration-500 ease-in-out hover:translate-y-[-5px]"
             onClick={() => scrollToSection('About')}
             onMouseEnter={() => setOnHover(true)}
             onMouseLeave={() => setOnHover(false)}
