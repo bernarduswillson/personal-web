@@ -1,5 +1,5 @@
 // Components
-import Logo from "@/components/Icon/Logo";
+import Logo from "@/components/Icon/Navbar/Logo";
 import ToggleMode from "@/components/ui/toggleMode";
 import { Button } from "@/components/ui/button";
 

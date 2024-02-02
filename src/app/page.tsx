@@ -5,7 +5,7 @@ import Sidebar from '@/components/Navigation/Sidebar';
 // Sections
 import Home from '@/contexts/Home';
 import About from '@/contexts/About';
-import Projects from '@/contexts/Projects';
+import Skills from '@/contexts/Skills';
 
 const Page = (): JSX.Element => {
   return (
@@ -14,7 +14,7 @@ const Page = (): JSX.Element => {
       <Sidebar />
       <Home />
       <About />
-      <Projects />
+      <Skills />
     </div>
   );
 };

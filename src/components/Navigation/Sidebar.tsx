@@ -24,7 +24,7 @@ const MENU_LIST: Menu[] = [
   },
   {
     text: '03',
-    section: 'Projects',
+    section: 'Skills',
   },
 ];
 

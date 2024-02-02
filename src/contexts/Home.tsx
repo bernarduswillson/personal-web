@@ -12,13 +12,13 @@ import { scrollToSection } from '@/lib/scroll';
 
 // Assets
 import Laptop from '@/assets/images/Hero/Laptop';
-import Dots from '@/components/Icon/Dots';
+import Dots from '@/assets/images/Illustration/Dots';
 import Diamond from '@/assets/images/Illustration/Diamond.svg';
-import Github from '@/components/Icon/Github'
-import Linkedin from '@/components/Icon/Linkedin';
-import Email from '@/components/Icon/Email';
-import Whatsapp from '@/components/Icon/Whatsapp';
-import Line from '@/components/Icon/Line';
+import Github from '@/components/Icon/Hero/Github'
+import Linkedin from '@/components/Icon/Hero/Linkedin';
+import Email from '@/components/Icon/Hero/Email';
+import Whatsapp from '@/components/Icon/Hero/Whatsapp';
+import Line from '@/components/Icon/Hero/Line';
 
 const Hero = (): JSX.Element => {
   // Hero's section height

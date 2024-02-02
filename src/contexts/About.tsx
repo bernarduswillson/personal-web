@@ -10,7 +10,7 @@ import Link from "next/link";
 import { getSectionHeight } from '@/lib/sectionHeight';
 
 // Assets
-import Dots from '@/components/Icon/Dots';
+import Dots from '@/assets/images/Illustration/Dots';
 import Photo from '@/assets/images/About/Photo.webp';
 import Code from '@/assets/images/Illustration/Code.svg';
 import Diamond from '@/assets/images/Illustration/Diamond.svg';
@@ -42,8 +42,8 @@ const About = (): JSX.Element => {
   // translate
   const yt = useTransform(scrollY, [endPixel1/3, endPixel2], [250, -500]);
   const yi = useTransform(scrollY, [endPixel1/3, endPixel2], [150, -300]);
-  const y1 = useTransform(scrollY, [endPixel1/3, endPixel2], [400, -800]);
-  const y2 = useTransform(scrollY, [endPixel1/3, endPixel2], [500, -1000]);
+  const y1 = useTransform(scrollY, [endPixel1/3, endPixel2], [800, -1600]);
+  const y2 = useTransform(scrollY, [endPixel1/3, endPixel2], [1000, -2000]);
   // rotate
   const r1 = useTransform(scrollY, [endPixel1/3, endPixel2], [0, 200]);
   const r2 = useTransform(scrollY, [endPixel1/3, endPixel2], [100, 350]);
@@ -90,7 +90,7 @@ const About = (): JSX.Element => {
                 />
               </div>
             </div>
-            <div className="text-lg font-normal sm:text-xl lg:text-2xl opacity-80 text-center lg:text-left leading-tight sm:leading-normal">
+            <div className="text-lg font-normal lg:text-xl opacity-80 text-center lg:text-left leading-tight sm:leading-normal">
               <div>
                 Currently in my 6th semester and interested in computer-related things such as web development and software development.
               </div>
@@ -99,7 +99,7 @@ const About = (): JSX.Element => {
               </div>
             </div>
             <div className="flex justify-center lg:justify-start">
-              <Link href="/next.svg">
+              <Link href="/CV_Bernardus Willson.pdf">
                 <Button
                   className="mt-5 text-lg font-semibold"
                 >
@@ -120,7 +120,7 @@ const About = (): JSX.Element => {
             spacing={50}
           />
         </div>
-        <div className='absolute right-[-600px] lg:right-[-250px] top-[-40px] lg:top-[-60px] blur-[10px]'>
+        <div className='absolute right-[-650px] lg:right-[-250px] top-[-40px] lg:top-[-60px] blur-[10px]'>
           <Image
             src={Code}
             alt="Code"
