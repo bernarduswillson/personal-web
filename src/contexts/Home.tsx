@@ -94,15 +94,15 @@ const Hero = (): JSX.Element => {
           className="lg:w-1/2 lg:pl-[10vw] lg:mx-0 mx-[5vw] flex flex-col justify-center text-center lg:text-start" 
           style={{ y: yt }}
         >
-          <div className="text-2xl font-bold">
+          <h1 className="text-2xl font-bold">
             Hi, I’m Willson.
-          </div>
-          <div className=" text-[40px] lg:text-[50px] font-extrabold leading-[40px] sm:leading-[50px] mt-2">
+          </h1>
+          <h1 className=" text-[40px] lg:text-[50px] font-extrabold leading-[40px] sm:leading-[50px] mt-2">
             A Computer Science <br/>Student.
-          </div>
-          <div className="text-lg mt-2">
+          </h1>
+          <h1 className="text-lg mt-2">
             at Bandung Institute of Technology, Indonesia.
-          </div>
+          </h1>
           
           {/* Social Media */}
           <div className='mt-5 gap-5 sm:gap-7 flex lg:justify-start justify-center'>
@@ -122,7 +122,7 @@ const Hero = (): JSX.Element => {
           </div>
 
           <div 
-            className="text-lg mt-5 inline-block cursor-pointer relative lg:w-fit w-full z-[50] hover:opacity-60 transition-all duration-500 ease-in-out hover:translate-y-[-5px]"
+            className=" hidden text-lg mt-5 lg:inline-block cursor-pointer relative lg:w-fit w-full z-[50] hover:opacity-60 transition-all duration-500 ease-in-out hover:translate-y-[-5px]"
             onClick={() => scrollToSection('About')}
             onMouseEnter={() => setOnHover(true)}
             onMouseLeave={() => setOnHover(false)}
@@ -141,7 +141,7 @@ const Hero = (): JSX.Element => {
         </motion.div>
       </div>
 
-      {/* Ornaments */}
+      {/* Illustration */}
       <div className='absolute right-0 opacity-10 sm:opacity-30'>
         <Dots
           rows={8}

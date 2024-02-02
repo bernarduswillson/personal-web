@@ -17,40 +17,31 @@ import Diamond from '@/assets/images/Illustration/Diamond.svg';
 import { Button } from "@/components/ui/button";
 
 const About = (): JSX.Element => {
-  // Hero and About's section height
-  const [startPixel1, setStartPixel1] = useState(0);
-  const [endPixel1, setEndPixel1] = useState(0);
-  const [startPixel2, setStartPixel2] = useState(0);
-  const [endPixel2, setEndPixel2] = useState(0);
+  // About's section height
+  const [startPixel, setStartPixel] = useState(0);
+  const [endPixel, setEndPixel] = useState(0);
 
-  const sectionId1 = 'Home';
+  const sectionId = 'About';
   useEffect(() => {
-    const sectionHome = getSectionHeight<number>(sectionId1);
-    setStartPixel1(sectionHome.startPixel);
-    setEndPixel1(sectionHome.endPixel);
-  }, [startPixel1, endPixel1]);
-
-  const sectionId2 = 'About';
-  useEffect(() => {
-    const sectionAbout = getSectionHeight<number>(sectionId2);
-    setStartPixel2(sectionAbout.startPixel);
-    setEndPixel2(sectionAbout.endPixel);
-  }, [startPixel2, endPixel2]);
+    const sectionAbout = getSectionHeight<number>(sectionId);
+    setStartPixel(sectionAbout.startPixel);
+    setEndPixel(sectionAbout.endPixel);
+  }, [startPixel, endPixel]);
 
   // About's animation
   const { scrollY } = useScroll();
   // translate
-  const yt = useTransform(scrollY, [endPixel1/3, endPixel2], [250, -500]);
-  const yi = useTransform(scrollY, [endPixel1/3, endPixel2], [150, -300]);
-  const y1 = useTransform(scrollY, [endPixel1/3, endPixel2], [800, -1600]);
-  const y2 = useTransform(scrollY, [endPixel1/3, endPixel2], [1000, -2000]);
+  const yt = useTransform(scrollY, [startPixel/3, endPixel], [250, -500]);
+  const yi = useTransform(scrollY, [startPixel/3, endPixel], [150, -300]);
+  const y1 = useTransform(scrollY, [startPixel/3, endPixel], [800, -1600]);
+  const y2 = useTransform(scrollY, [startPixel/3, endPixel], [1000, -2000]);
   // rotate
-  const r1 = useTransform(scrollY, [endPixel1/3, endPixel2], [0, 200]);
-  const r2 = useTransform(scrollY, [endPixel1/3, endPixel2], [100, 350]);
+  const r1 = useTransform(scrollY, [startPixel/3, endPixel], [0, 200]);
+  const r2 = useTransform(scrollY, [startPixel/3, endPixel], [100, 350]);
 
     return (
       <div id="About" className='min-h-screen relative dark:bg-black bg-[#FFFFFF] transition duration-400 flex items-center justify-center'>
-        <div className="lg:flex z-[10]">
+        <div className="lg:flex z-[10] lg:mt-0 mt-[70px]">
           <motion.div
             className="lg:w-1/2 justify-center hidden lg:flex z-[10]" 
             style={{ y: yi }}
@@ -70,9 +61,9 @@ const About = (): JSX.Element => {
             className="lg:w-1/2 lg:pr-[10vw] lg:px-0 px-[10vw] lg:flex lg:flex-col lg:justify-center" 
             style={{ y: yt }}
           >
-            <div className="text-[40px] sm:text-[50px] font-extrabold leading-[50px] mb-5 text-center lg:text-left">
+            <h1 className="text-[30px] sm:text-[50px] font-extrabold leading-[50px] mb-5 text-center lg:text-left">
               I’m Bernardus Willson.
-            </div>
+            </h1>
             <div className="justify-center flex lg:hidden mb-5 z-[10]">
               {/* Mobile Photo */}
               <div className="w-[70%] flex justify-center z-[10]">
@@ -91,12 +82,12 @@ const About = (): JSX.Element => {
               </div>
             </div>
             <div className="text-lg font-normal lg:text-xl opacity-80 text-center lg:text-left leading-tight sm:leading-normal">
-              <div>
+              <h2>
                 Currently in my 6th semester and interested in computer-related things such as web development and software development.
-              </div>
-              <div className="mt-2 hidden sm:block">
+              </h2>
+              <h2 className="mt-2 hidden sm:block">
                 I consistently seek opportunities to develop my soft and hard skills through volunteers, committees, and projects.
-              </div>
+              </h2>
             </div>
             <div className="flex justify-center lg:justify-start">
               <Link href="/CV_Bernardus Willson.pdf">
@@ -110,7 +101,7 @@ const About = (): JSX.Element => {
           </motion.div>
         </div>
 
-        {/* Ornaments */}
+        {/* Illustration */}
         <div className='absolute right-0 top-0 opacity-10 sm:opacity-30'>
           <Dots
             rows={8}

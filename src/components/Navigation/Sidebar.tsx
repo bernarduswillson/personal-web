@@ -26,6 +26,18 @@ const MENU_LIST: Menu[] = [
     text: '03',
     section: 'Skills',
   },
+  {
+    text: '04',
+    section: 'Experience',
+  },
+  // {
+  //   text: '05',
+  //   section: 'Projects',
+  // },
+  // {
+  //   text: '06',
+  //   section: 'Contact',
+  // },
 ];
 
 const Sidebar = (): JSX.Element => {
@@ -38,9 +50,42 @@ const Sidebar = (): JSX.Element => {
     restDelta: 0.001,
   });
 
+  const [isOpened, setIsOpened] = useState(false);
+
   return (
-    <aside className="fixed h-screen items-center ml-7 z-50 lg:flex hidden">
-      <div className="h-fit flex relative">
+    <aside className="fixed h-screen items-center z-50 flex">
+      {/* Mobile */}
+      <div className='flex lg:hidden' onClick={() => setIsOpened(!isOpened)}>
+        &gt;
+      </div>
+
+      <div className={`fixed lg:hidden top-0 left-0 w-full h-full bg-secondary z-[60] transform transition-all duration-500 ease-in-out ${isOpened ? 'translate-x-0' : '-translate-x-full '}`}>
+        <div>
+          <div className="flex justify-end p-5">
+            <div onClick={() => setIsOpened(!isOpened)}>
+              &lt;
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col items-center justify-center h-full">
+          {MENU_LIST.map((menu: Menu) => (
+            <div
+              key={menu.text}
+              className="flex relative cursor-pointer transition duration-300"
+              onClick={() => {
+                scrollToSection(menu.section);
+                setIsOpened(!isOpened);
+              }}
+            >
+              <div className="my-4 px-3">{menu.section}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+      
+
+      {/* Desktop */}
+      <div className="h-fit relative lg:flex hidden ml-7">
         <div className="w-[1px] bg-primary opacity-60"></div>
         <motion.div
           className="w-[5px] bg-primary"

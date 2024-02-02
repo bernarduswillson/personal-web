@@ -6,6 +6,7 @@ import Sidebar from '@/components/Navigation/Sidebar';
 import Home from '@/contexts/Home';
 import About from '@/contexts/About';
 import Skills from '@/contexts/Skills';
+import Experience from '@/contexts/Experience';
 
 const Page = (): JSX.Element => {
   return (
@@ -15,6 +16,7 @@ const Page = (): JSX.Element => {
       <Home />
       <About />
       <Skills />
+      <Experience />
     </div>
   );
 };
