@@ -38,22 +38,28 @@ const About = (): JSX.Element => {
   // rotate
   const r1 = useTransform(scrollY, [startPixel/3, endPixel], [0, 200]);
   const r2 = useTransform(scrollY, [startPixel/3, endPixel], [100, 350]);
+  // opacity
+  const oi = useTransform(scrollY, [startPixel/3, endPixel], [0.2, 2]);
 
     return (
       <div id="About" className='min-h-screen relative dark:bg-black bg-[#FFFFFF] transition duration-400 flex items-center justify-center'>
         <div className="lg:flex z-[10] lg:mt-0 mt-[70px]">
           <motion.div
             className="lg:w-1/2 justify-center hidden lg:flex z-[10]" 
-            style={{ y: yi }}
+            style={{ y: yi, opacity: oi }}
           >
             {/* Desktop Photo */}
-            <div className="w-[40%]">
-              <Image
-                src={Photo}
-                alt="Photo"
-                placeholder="blur"
-                className="rounded-[50px]"
-              />
+            <div className="w-[40%] flex items-center">
+              <div 
+                className="overflow-hidden transition-transform rounded-[50px] transform scale-100 ease-in-out duration-700 hover:scale-95"
+              >
+                <Image
+                  src={Photo}
+                  alt="Photo"
+                  placeholder="blur"
+                  className="transition-transform rounded-[50px] transform scale-100 ease-in-out duration-700 hover:scale-[1.2]"
+                />
+              </div>
             </div>
           </motion.div>
           {/* Content */}

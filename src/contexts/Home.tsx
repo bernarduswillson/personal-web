@@ -2,8 +2,8 @@
 
 // Imports
 import Image from 'next/image';
-import React, { useState, useEffect } from 'react';
-import { motion, useScroll, useTransform } from "framer-motion";
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, useScroll, useTransform, useInView } from "framer-motion";
 import { useTheme } from 'next-themes';
 
 // Utils
@@ -21,6 +21,10 @@ import Whatsapp from '@/components/Icon/Hero/Whatsapp';
 import Line from '@/components/Icon/Hero/Line';
 
 const Hero = (): JSX.Element => {
+  // Start animation
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  
   // Hero's section height
   const [startPixel, setStartPixel] = useState(0);
   const [endPixel, setEndPixel] = useState(0);
@@ -35,7 +39,6 @@ const Hero = (): JSX.Element => {
   // Hero's animation
   const { scrollY } = useScroll();
   // translate
-  const yt = useTransform(scrollY, [startPixel, endPixel], [0, -100]);
   const y1 = useTransform(scrollY, [startPixel, endPixel], [0, -300]);
   const y2 = useTransform(scrollY, [startPixel, endPixel], [0, -400]);
   const y3 = useTransform(scrollY, [startPixel, endPixel], [0, -1000]);
@@ -92,7 +95,12 @@ const Hero = (): JSX.Element => {
         {/* Content */}
         <motion.div 
           className="lg:w-1/2 lg:pl-[10vw] lg:mx-0 mx-[5vw] flex flex-col justify-center text-center lg:text-start" 
-          style={{ y: yt }}
+          style={{
+            transform: isInView ? "none" : "translateY(100px)",
+            opacity: isInView ? 1 : 0,
+            transition: "all 1s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+          }}
+          ref={ref}
         >
           <h1 className="text-2xl font-bold">
             Hi, I’m Willson.
