@@ -117,14 +117,14 @@ const About = (): JSX.Element => {
             spacing={50}
           />
         </div>
-        <div className='absolute right-[-650px] lg:right-[-250px] top-[-40px] lg:top-[-60px] blur-[10px]'>
+        <div className='absolute right-[-650px] lg:right-[-250px] top-[-40px] lg:top-[-60px] blur-[10px] opacity-50'>
           <Image
             src={Code}
             alt="Code"
           />
         </div>
         <motion.div
-          className='absolute lg:top-[50vh] lg:right-0 lg:w-[8vw] top-[50vh] right-[-20px] w-[70px] z-[10]'
+          className='absolute lg:top-[50vh] lg:right-0 lg:w-[8vw] top-[50vh] right-[-20px] w-[70px] z-[10] opacity-80'
           style={{ y: y1, rotate: r1 }}
         >
           <Image
@@ -133,7 +133,7 @@ const About = (): JSX.Element => {
           />
         </motion.div>
         <motion.div
-          className='absolute lg:bottom-[5vw] lg:left-[5vw] lg:w-[5vw] bottom-[5vw] left-[-20px] w-[50px] z-[10]'
+          className='absolute lg:bottom-[5vw] lg:left-[5vw] lg:w-[5vw] bottom-[5vw] left-[-20px] w-[50px] z-[10] opacity-80'
           style={{ y: y2, rotate: r2 }}
         >
           <Image

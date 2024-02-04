@@ -4,13 +4,17 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useState, useEffect } from 'react';
 import Image from "next/image";
+import { useTheme } from "next-themes";
 
 // Utils
 import { getSectionHeight } from '@/lib/sectionHeight';
 
 // Assets
 import Code from '@/assets/images/Illustration/Code.svg';
+import Code2 from '@/assets/images/Illustration/Code2.png';
 import Web from '@/components/Icon/Skills/Web';
+import Software from "@/components/Icon/Skills/Software";
+import Mobile from '@/components/Icon/Skills/Mobile';
 import Card from '@/components/Card/Card';
 
 // Skills data
@@ -23,19 +27,29 @@ const skills = [
   },
   {
     name: "Software Development",
-    image: Web,
+    image: Software,
     desc: "I possess intermediate-level proficiency in software development, demonstrating competence in coding and problem-solving while continuing to enhance my skills in various programming languages and frameworks.",
     tools: ["Python", "Java", "C#"]
   },
   {
     name: "Mobile Development",
-    image: Web,
+    image: Mobile,
     desc: "I am a novice in mobile development, actively learning and gaining foundational skills to create basic mobile applications while exploring different platforms and frameworks.",
     tools: ["Flutter"]
   }
 ];
 
-const Skills = (): JSX.Element => { 
+const Skills = (): JSX.Element => {
+  // Theme handler
+  const { setTheme, resolvedTheme } = useTheme();
+  const [loading, setLoading] = useState(true);
+  const [mode, setMode] = useState(resolvedTheme);
+  
+  useEffect(() => {
+    setMode(resolvedTheme);
+    setLoading(false);
+  }, [resolvedTheme]);
+
   // About and Skills's section height
   const [startPixel1, setStartPixel1] = useState(0);
   const [endPixel1, setEndPixel1] = useState(0);
@@ -95,12 +109,19 @@ const Skills = (): JSX.Element => {
       </motion.div>
 
       {/* Illustration */}
-      <div className='absolute left-[-600px] lg:left-[-250px] top-[-120px] lg:top-[-60px] blur-[10px]'>
+      <div className='absolute left-[-600px] lg:left-[-250px] top-[-120px] lg:top-[-60px] blur-[10px] opacity-50'>
         <Image
           src={Code}
           alt="Code"
         />
       </div>
+      <div className={`absolute w-[30vw] min-w-[500px] ${mode =='dark' && !loading ? 'blur-0 opacity-30' : 'blur-[10px] opacity-100'}`}>
+        <Image
+          src={Code2}
+          alt="Code"
+        />
+      </div>
+
     </div>
   );
 };

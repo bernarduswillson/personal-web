@@ -22,7 +22,7 @@ const Card = ({ name, image: ImageComponent, desc, tools }: CardProps): JSX.Elem
   }, [resolvedTheme]);
 
   return (
-    <div className="flex flex-col max-w-[400px] h-auto text-primary border-[3px] dark:border-white border-black dark:border-opacity-60 backdrop-blur-2xl border-opacity-60 transition-all duration-300 hover:scale-105 ease-in-out">
+    <div className="flex flex-col max-w-[400px] h-auto text-primary border-[3px] dark:border-white border-black dark:border-opacity-60 backdrop-blur-[2px] border-opacity-60 transition-all duration-300 hover:scale-105 ease-in-out">
       {/* Head */}
       <div className="text-2xl font-bold flex mx-8 gap-4 mt-5">
         <div className='flex flex-col justify-center'>

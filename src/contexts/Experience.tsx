@@ -8,6 +8,9 @@ import Image from "next/image";
 // Utils
 import { getSectionHeight } from '@/lib/sectionHeight';
 
+// Assets
+import Code from '@/assets/images/Illustration/Code.svg';
+
 const Experience = (): JSX.Element => { 
   // Skills and Experience's section height
   const [startPixel1, setStartPixel1] = useState(0);
@@ -39,6 +42,13 @@ const Experience = (): JSX.Element => {
   return (
     <div id="Experience" className='min-h-screen relative dark:bg-black bg-[#FFFFFF] transition duration-400 flex items-center justify-center'>
       EXPERIENCE
+
+      <div className='absolute right-[-650px] lg:right-[-250px] top-[-40px] lg:top-[-60px] blur-[10px] opacity-50 rotate-180'>
+        <Image
+          src={Code}
+          alt="Code"
+        />
+      </div>
     </div>
   );
 };
