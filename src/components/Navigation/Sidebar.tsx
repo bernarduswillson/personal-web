@@ -3,9 +3,13 @@
 // Imports
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
+import Image from 'next/image';
 
 // Utils
 import { scrollToSection } from '@/lib/scroll';
+
+// Assets
+import RightArrow from '@/components/Icon/Navbar/RightArrow.svg';
 
 interface Menu {
   text: string;
@@ -50,24 +54,32 @@ const Sidebar = (): JSX.Element => {
     restDelta: 0.001,
   });
 
+  // Mobile menu handler
   const [isOpened, setIsOpened] = useState(false);
 
   return (
     <aside className="fixed h-screen items-center z-50 flex">
       {/* Mobile */}
-      <div className='flex lg:hidden' onClick={() => setIsOpened(!isOpened)}>
-        &gt;
+      <div
+        className={`lg:hidden cursor-pointer ${isOpened ? 'hidden' : 'block'}`}
+        style={{ paddingLeft: '20px', paddingTop: '20px', paddingBottom: '20px', paddingRight: '10px'}}
+        onClick={() => setIsOpened(!isOpened)}
+      >
+        <Image src={RightArrow} alt="Right Arrow" />
       </div>
-
-      <div className={`fixed lg:hidden top-0 left-0 w-full h-full bg-secondary z-[60] transform transition-all duration-500 ease-in-out ${isOpened ? 'translate-x-0' : '-translate-x-full '}`}>
+      <div className={`fixed lg:hidden top-0 left-0 w-full h-full z-[60] transform transition-all duration-500 ease-in-out ${isOpened ? 'translate-x-0' : '-translate-x-full '}`} style={{ backdropFilter: 'blur(15px)' }}>
         <div>
-          <div className="flex justify-end p-5">
+          <div className="flex justify-end cursor-pointer" style={{ paddingLeft: '20px', paddingTop: '20px', paddingBottom: '20px', paddingRight: '20px'}}>
             <div onClick={() => setIsOpened(!isOpened)}>
-              &lt;
+              <Image src={RightArrow} alt="Right Arrow" className='rotate-180' />
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-center justify-center h-full">
+        <div className="flex flex-col h-full w-full" style={{ paddingLeft: '15vw', paddingTop: '15vh' }}>
+          <div className='font-bold text-2xl'>
+            Menu
+          </div>
+          <div className='bg-primary' style={{ height: '3px', width: '40vw'}}></div>
           {MENU_LIST.map((menu: Menu) => (
             <div
               key={menu.text}
@@ -83,7 +95,6 @@ const Sidebar = (): JSX.Element => {
         </div>
       </div>
       
-
       {/* Desktop */}
       <div className="h-fit relative lg:flex hidden ml-7">
         <div className="w-[1px] bg-primary opacity-60"></div>
