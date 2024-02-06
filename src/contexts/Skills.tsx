@@ -15,7 +15,7 @@ import Code2 from '@/assets/images/Illustration/Code2.png';
 import Web from '@/components/Icon/Skills/Web';
 import Software from "@/components/Icon/Skills/Software";
 import Mobile from '@/components/Icon/Skills/Mobile';
-import Card from '@/components/Card/Card';
+import Card from '@/components/Card/SkillsCard';
 
 // Skills data
 const skills = [

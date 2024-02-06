@@ -33,7 +33,7 @@ const MENU_LIST: Menu[] = [
   },
   {
     text: '04',
-    section: 'Experience',
+    section: 'Projects',
   },
   // {
   //   text: '05',
@@ -56,7 +56,7 @@ const Sidebar = (): JSX.Element => {
   });
 
   // Mobile menu handler
-  const [isOpened, setIsOpened] = useState(true);
+  const [isOpened, setIsOpened] = useState(false);
 
   // Theme handler
   const { setTheme, resolvedTheme } = useTheme();
