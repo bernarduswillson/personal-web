@@ -10,11 +10,10 @@ interface CardProps {
   image: StaticImageData;
   desc: string;
   tools: string[];
-  width: number;
   height: number;
 }
 
-const Card = ({ name, image, desc, tools, width, height }: CardProps): JSX.Element => {
+const Card = ({ name, image, desc, tools, height }: CardProps): JSX.Element => {
   const [onHover, setOnHover] = useState(false);
   const [showText, setShowText] = useState(false);
 
@@ -41,8 +40,7 @@ const Card = ({ name, image, desc, tools, width, height }: CardProps): JSX.Eleme
         borderRadius: '20px',
         transform: onHover ? 'scale(0.95)' : 'scale(1)',
         height: `${height}px`,
-        width: `${width}px`,
-        maxWidth: '100%',
+        maxWidth: '400px',
       }}
       onMouseEnter={() => setOnHover(true)}
       onMouseLeave={() => {

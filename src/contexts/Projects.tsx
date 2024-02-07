@@ -20,7 +20,6 @@ const projects = [
     image: Toco,
     desc: "Lorem Ipsum.",
     tools: ["HTML5", "CSS", "JavaScript", "React", "Tailwind CSS", "Express.js", "PHP"],
-    width: 400,
     height: 400
   },
   {
@@ -28,7 +27,6 @@ const projects = [
     image: Toco,
     desc: "Lorem Ipsum.",
     tools: ["HTML5", "CSS", "JavaScript", "React", "Tailwind CSS", "Express.js", "PHP"],
-    width: 400,
     height: 600
   },
   {
@@ -36,7 +34,6 @@ const projects = [
     image: Toco,
     desc: "Lorem Ipsum.",
     tools: ["HTML5", "CSS", "JavaScript", "React", "Tailwind CSS", "Express.js", "PHP"],
-    width: 400,
     height: 600
   },
   {
@@ -44,7 +41,6 @@ const projects = [
     image: Toco,
     desc: "Lorem Ipsum.",
     tools: ["HTML5", "CSS", "JavaScript", "React", "Tailwind CSS", "Express.js", "PHP"],
-    width: 400,
     height: 600
   },
 ];
@@ -103,7 +99,6 @@ const Projects = (): JSX.Element => {
                       image={project.image}
                       desc={project.desc}
                       tools={project.tools}
-                      width={project.width}
                       height={project.height}
                     />
                   </div>
@@ -119,7 +114,6 @@ const Projects = (): JSX.Element => {
                       image={project.image}
                       desc={project.desc}
                       tools={project.tools}
-                      width={project.width}
                       height={project.height}
                     />
                   </div>
@@ -136,7 +130,6 @@ const Projects = (): JSX.Element => {
                   image={project.image}
                   desc={project.desc}
                   tools={project.tools}
-                  width={project.width}
                   height={project.height}
                 />
               </div>
