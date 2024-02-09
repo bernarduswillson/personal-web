@@ -7,6 +7,7 @@ import Home from '@/contexts/Home';
 import About from '@/contexts/About';
 import Skills from '@/contexts/Skills';
 import Projects from '@/contexts/Projects';
+import Contact from '@/contexts/Contact';
 
 const Page = (): JSX.Element => {
   return (
@@ -17,6 +18,7 @@ const Page = (): JSX.Element => {
       <About />
       <Skills />
       <Projects />
+      <Contact />
     </div>
   );
 };

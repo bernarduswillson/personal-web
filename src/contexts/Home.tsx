@@ -85,7 +85,7 @@ const Hero = (): JSX.Element => {
   const [onHover, setOnHover] = useState(false);
 
   return (
-    <div id="Home" className='min-h-screen relative dark:bg-black bg-[#FFFFFF] transition duration-400 flex items-center justify-center'>
+    <div id="Home" className='h-screen relative dark:bg-black bg-[#FFFFFF] transition duration-400 flex items-center justify-center'>
       <div className="w-full lg:flex-row-reverse lg:flex">
         {/* Laptop Image */}
         <div className="z-[5] mx-[5vw] mb-[5vh] lg:mb-0 lg:w-1/2 relative select-none pointer-events-none flex justify-center">

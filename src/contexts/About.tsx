@@ -42,7 +42,7 @@ const About = (): JSX.Element => {
   const oi = useTransform(scrollY, [startPixel/3, endPixel], [0.2, 2]);
 
     return (
-      <div id="About" className='min-h-screen relative dark:bg-black bg-[#FFFFFF] transition duration-400 flex items-center justify-center'>
+      <div id="About" className='h-screen relative dark:bg-black bg-[#FFFFFF] transition duration-400 flex items-center justify-center'>
         <div className="lg:flex z-[10] lg:mt-0 mt-[70px]">
           <motion.div
             className="lg:w-1/2 justify-center hidden lg:flex z-[10]" 

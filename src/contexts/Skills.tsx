@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useState, useEffect } from 'react';
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import Autoplay from "embla-carousel-autoplay"
 
 // Utils
 import { getSectionHeight } from '@/lib/sectionHeight';
@@ -16,6 +17,13 @@ import Web from '@/components/Icon/Skills/Web';
 import Software from "@/components/Icon/Skills/Software";
 import Mobile from '@/components/Icon/Skills/Mobile';
 import Card from '@/components/Card/SkillsCard';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 
 // Skills data
 const skills = [
@@ -28,7 +36,7 @@ const skills = [
   {
     name: "Software Development",
     image: Software,
-    desc: "I possess intermediate-level proficiency in software development, demonstrating competence in coding and problem-solving while continuing to enhance my skills in various programming languages and frameworks.",
+    desc: "I have intermediate proficiency in software development, excelling in coding, problem-solving, and Object-Oriented Programming.",
     tools: ["Python", "Java", "C#"]
   },
   {
@@ -72,14 +80,14 @@ const Skills = (): JSX.Element => {
     setEndPixel2(sectionSkills.endPixel);
   }, [startPixel2, endPixel2]);
 
-  // About's animation
+  // Skills' animation
   const { scrollY } = useScroll();
   // translate
   const yt = useTransform(scrollY, [startPixel2 - (height1/2), endPixel2], [250, -500]);
     
   return (
-    <div id="Skills" className='min-h-screen relative dark:bg-black bg-[#FFFFFF] transition duration-400 flex items-center justify-center'>
-      <motion.div className="z-[10] mx-[8vw]" style={{ y: yt }}>
+    <div id="Skills" className='h-screen relative dark:bg-black bg-[#FFFFFF] transition duration-400 flex items-center justify-center'>
+      <motion.div className="z-[10] mx-[8vw] flex flex-col items-center" style={{ y: yt }}>
         {/* Title */}
         <div className="text-center">
           <h2 className="text-lg font-normal lg:text-xl opacity-80">
@@ -91,7 +99,7 @@ const Skills = (): JSX.Element => {
         </div>
 
         {/* Skills */}
-        <div className="flex justify-center flex-wrap gap-4 mb-10">
+        <div className="lg:flex hidden justify-center gap-4 mb-10">
           { skills.map((skill, index) => (
             <div
               key={index}
@@ -106,6 +114,32 @@ const Skills = (): JSX.Element => {
             </div>
           ))}
         </div>
+        <Carousel
+          opts={{
+            align: "center",
+          }}
+          className="lg:hidden flex justify-center mb-10 w-[100vw]"
+          plugins={[
+            Autoplay({
+              delay: 3000,
+            }),
+          ]}
+        >
+          <CarouselContent>
+            {Array.from({ length: skills.length }).map((_, index) => (
+              <CarouselItem key={index} className="flex justify-center">
+                <div className="px-[10vw]">
+                  <Card
+                    name={skills[index].name}
+                    image={skills[index].image}
+                    desc={skills[index].desc}
+                    tools={skills[index].tools}
+                  />
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
       </motion.div>
 
       {/* Illustration */}

@@ -16,32 +16,60 @@ import Toco from '@/assets/images/Projects/Toco.jpg';
 // Projects data
 const projects = [
   {
-    name: "Toco",
+    name: "SRE & IYREF Website",
     image: Toco,
-    desc: "Lorem Ipsum.",
-    tools: ["HTML5", "CSS", "JavaScript", "React", "Tailwind CSS", "Express.js", "PHP"],
-    height: 400
+    desc: "As the Director of IT Development at SRE ITB, I led the creation and maintenance of a web app showcasing the organization's profile and updates. Simultaneously, as the IT Manager at IYREF, I oversaw a similar web app, providing detailed information and real-time updates.",
+    tools: ["Next.js", "Tailwind CSS", "Express.js", "Prisma", "MySQL"],
+    height: 400,
+    link: "https://sreitb.com"
   },
   {
     name: "Toco",
     image: Toco,
     desc: "Lorem Ipsum.",
     tools: ["HTML5", "CSS", "JavaScript", "React", "Tailwind CSS", "Express.js", "PHP"],
-    height: 600
+    height: 600,
+    link: "https://sreitb.com"
   },
   {
     name: "Toco",
     image: Toco,
     desc: "Lorem Ipsum.",
     tools: ["HTML5", "CSS", "JavaScript", "React", "Tailwind CSS", "Express.js", "PHP"],
-    height: 600
+    height: 600,
+    link: "https://sreitb.com"
   },
   {
     name: "Toco",
     image: Toco,
     desc: "Lorem Ipsum.",
     tools: ["HTML5", "CSS", "JavaScript", "React", "Tailwind CSS", "Express.js", "PHP"],
-    height: 600
+    height: 600,
+    link: "https://sreitb.com"
+  },
+  {
+    name: "Toco",
+    image: Toco,
+    desc: "Lorem Ipsum.",
+    tools: ["HTML5", "CSS", "JavaScript", "React", "Tailwind CSS", "Express.js", "PHP"],
+    height: 600,
+    link: "https://sreitb.com"
+  },
+  {
+    name: "Toco",
+    image: Toco,
+    desc: "Lorem Ipsum.",
+    tools: ["HTML5", "CSS", "JavaScript", "React", "Tailwind CSS", "Express.js", "PHP"],
+    height: 600,
+    link: "https://sreitb.com"
+  },
+  {
+    name: "Toco",
+    image: Toco,
+    desc: "Lorem Ipsum.",
+    tools: ["HTML5", "CSS", "JavaScript", "React", "Tailwind CSS", "Express.js", "PHP"],
+    height: 600,
+    link: "https://sreitb.com"
   },
 ];
 
@@ -68,14 +96,14 @@ const Projects = (): JSX.Element => {
     setEndPixel2(sectionProjects.endPixel);
   }, [startPixel2, endPixel2]);
 
-  // About's animation
+  // Projects's animation
   const { scrollY } = useScroll();
   // translate
   const yt = useTransform(scrollY, [startPixel2 - (height1/2), endPixel2], [250, -500]);
     
   return (
-    <div id="Projects" className='min-h-screen relative dark:bg-black bg-[#FFFFFF] transition duration-400 flex items-center justify-center'>
-      <div className="w-full relative">
+    <div id="Projects" className='h-screen relative dark:bg-black bg-[#FFFFFF] transition duration-400 flex items-center justify-center'>
+      <div className="w-full relative hidden">
         <motion.div className="z-[10] mx-[8vw]" style={{ y: yt }}>
           {/* Title */}
           <div className="text-center">
@@ -100,6 +128,7 @@ const Projects = (): JSX.Element => {
                       desc={project.desc}
                       tools={project.tools}
                       height={project.height}
+                      link={project.link}
                     />
                   </div>
                 ))}
@@ -115,6 +144,7 @@ const Projects = (): JSX.Element => {
                       desc={project.desc}
                       tools={project.tools}
                       height={project.height}
+                      link={project.link}
                     />
                   </div>
                 ))}
@@ -131,6 +161,7 @@ const Projects = (): JSX.Element => {
                   desc={project.desc}
                   tools={project.tools}
                   height={project.height}
+                  link={project.link}
                 />
               </div>
             ))}

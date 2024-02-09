@@ -35,14 +35,10 @@ const MENU_LIST: Menu[] = [
     text: '04',
     section: 'Projects',
   },
-  // {
-  //   text: '05',
-  //   section: 'Projects',
-  // },
-  // {
-  //   text: '06',
-  //   section: 'Contact',
-  // },
+  {
+    text: '05',
+    section: 'Contact',
+  },
 ];
 
 const Sidebar = (): JSX.Element => {
