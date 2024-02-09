@@ -12,18 +12,6 @@ import { getSectionHeight } from '@/lib/sectionHeight';
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/ui/alert-dialog"
-import { ToastAction } from "@/components/ui/toast"
 import { useToast } from "@/components/ui/use-toast"
 
 const Contact = (): JSX.Element => { 
@@ -116,7 +104,7 @@ const Contact = (): JSX.Element => {
             <h2 className="text-lg font-normal lg:text-xl opacity-80">
               Contact me and
             </h2>
-            <h1 className="text-[40px] sm:text-[50px] font-extrabold mb-8 mt-[-10px]">
+            <h1 className="text-[40px] sm:text-[50px] font-extrabold mb-8 mt-0 sm:leading-normal leading-[40px] sm:mt-[-10px]">
               Let’s Get in Touch
             </h1>
           </div>

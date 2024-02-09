@@ -4,6 +4,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useState, useEffect } from 'react';
 import Image from "next/image";
+import Autoplay from "embla-carousel-autoplay"
 
 // Utils
 import { getSectionHeight } from '@/lib/sectionHeight';
@@ -12,68 +13,89 @@ import { getSectionHeight } from '@/lib/sectionHeight';
 import Code from '@/assets/images/Illustration/Code.svg';
 import ProjectsCard from '@/components/Card/ProjectsCard';
 import Toco from '@/assets/images/Projects/Toco.jpg';
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
 
 // Projects data
 const projects = [
   {
     name: "SRE & IYREF Website",
     image: Toco,
-    desc: "As the Director of IT Development at SRE ITB, I led the creation and maintenance of a web app showcasing the organization's profile and updates. Simultaneously, as the IT Manager at IYREF, I oversaw a similar web app, providing detailed information and real-time updates.",
+    caption: "Ezz website.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.",
+    desc: "As the Director of IT Development at SRE ITB, I led the creation and maintenance of a web app showcasing the organization's profile and updates. Simultaneously, as the IT Manager at IYREF, I oversaw a similar web app, providing detailed information and real-time updates. As the Director of IT Development at SRE ITB, I led the creation and maintenance of a web app showcasing the organization's profile and updates. Simultaneously, as the IT Manager at IYREF, I oversaw a similar web app, providing detailed information and real-time updates.",
     tools: ["Next.js", "Tailwind CSS", "Express.js", "Prisma", "MySQL"],
-    height: 400,
-    link: "https://sreitb.com"
+    date: "1 May 2003",
+    link: "https://sreitb.com",
+    github: "https://github.com/bernarduswillson"
   },
   {
     name: "Toco",
     image: Toco,
+    caption: "LOREMMMLorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.",
     desc: "Lorem Ipsum.",
     tools: ["HTML5", "CSS", "JavaScript", "React", "Tailwind CSS", "Express.js", "PHP"],
-    height: 600,
-    link: "https://sreitb.com"
+    date: "1 May 2003",
+    link: "https://sreitb.com",
+    github: "https://github.com/bernarduswillson"
   },
   {
     name: "Toco",
     image: Toco,
+    caption: "LOREMMMLorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.",
     desc: "Lorem Ipsum.",
     tools: ["HTML5", "CSS", "JavaScript", "React", "Tailwind CSS", "Express.js", "PHP"],
-    height: 600,
-    link: "https://sreitb.com"
+    date: "1 May 2003",
+    link: "https://sreitb.com",
+    github: "https://github.com/bernarduswillson"
   },
   {
     name: "Toco",
     image: Toco,
+    caption: "LOREMMMLorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.",
     desc: "Lorem Ipsum.",
     tools: ["HTML5", "CSS", "JavaScript", "React", "Tailwind CSS", "Express.js", "PHP"],
-    height: 600,
-    link: "https://sreitb.com"
+    date: "1 May 2003",
+    link: "https://sreitb.com",
+    github: "https://github.com/bernarduswillson"
   },
   {
     name: "Toco",
     image: Toco,
+    caption: "LOREMMMLorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.",
     desc: "Lorem Ipsum.",
     tools: ["HTML5", "CSS", "JavaScript", "React", "Tailwind CSS", "Express.js", "PHP"],
-    height: 600,
-    link: "https://sreitb.com"
+    date: "1 May 2003",
+    link: "https://sreitb.com",
+    github: "https://github.com/bernarduswillson"
   },
   {
     name: "Toco",
     image: Toco,
+    caption: "LOREMMMLorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.",
     desc: "Lorem Ipsum.",
     tools: ["HTML5", "CSS", "JavaScript", "React", "Tailwind CSS", "Express.js", "PHP"],
-    height: 600,
-    link: "https://sreitb.com"
+    date: "1 May 2003",
+    link: "https://sreitb.com",
+    github: "https://github.com/bernarduswillson"
   },
   {
     name: "Toco",
     image: Toco,
+    caption: "LOREMMMLorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.",
     desc: "Lorem Ipsum.",
     tools: ["HTML5", "CSS", "JavaScript", "React", "Tailwind CSS", "Express.js", "PHP"],
-    height: 600,
-    link: "https://sreitb.com"
+    date: "1 May 2003",
+    link: "https://sreitb.com",
+    github: "https://github.com/bernarduswillson"
   },
 ];
 
-const Projects = (): JSX.Element => { 
+const Projects = ({ onDrawerOpen }: any): JSX.Element => {
   // Skills and Projects's section height
   const [startPixel1, setStartPixel1] = useState(0);
   const [endPixel1, setEndPixel1] = useState(0);
@@ -100,11 +122,21 @@ const Projects = (): JSX.Element => {
   const { scrollY } = useScroll();
   // translate
   const yt = useTransform(scrollY, [startPixel2 - (height1/2), endPixel2], [250, -500]);
+
+  // Drawer
+  const [isOpened, setIsOpened] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
+  const handleDrawerClick = (projectDetails: any) => {
+    setSelectedProject(projectDetails);
+    setIsOpened(true);
+    onDrawerOpen(projectDetails);
+  };
+  
     
   return (
     <div id="Projects" className='h-screen relative dark:bg-black bg-[#FFFFFF] transition duration-400 flex items-center justify-center'>
-      <div className="w-full relative hidden">
-        <motion.div className="z-[10] mx-[8vw]" style={{ y: yt }}>
+      <motion.div className="w-full relative" style={{ y: yt }}>
+        <div className="z-[10] mx-[8vw] flex flex-col items-center">
           {/* Title */}
           <div className="text-center">
             <h2 className="text-lg font-normal lg:text-xl opacity-80">
@@ -116,58 +148,35 @@ const Projects = (): JSX.Element => {
           </div>
 
           {/* Projects */}
-          {/* Desktop */}
-          <div className="hidden lg:flex relative" style={{ gap: '40px' }}>
-            <div className="flex justify-end" style={{ width: '50%' }}>
-              <div className="flex flex-col">
-                {projects.filter((_, index) => index % 2 === 0).map((project, index) => (
-                  <div key={index} className="">
+          <Carousel
+            opts={{
+              align: "center",
+            }}
+            className="flex justify-center mb-10 w-[100vw] px-[10vw]"
+            plugins={[
+              Autoplay({
+                delay: 3000,
+              }),
+            ]}
+          >
+            <CarouselContent>
+              {Array.from({ length: projects.length }).map((_, index) => (
+                <CarouselItem key={index} className="flex justify-center md:basis-1/2 xl:basis-1/3">
+                  <div className="" onClick={() => handleDrawerClick(projects[index])}>
                     <ProjectsCard
-                      name={project.name}
-                      image={project.image}
-                      desc={project.desc}
-                      tools={project.tools}
-                      height={project.height}
-                      link={project.link}
+                      name={projects[index].name}
+                      image={projects[index].image}
+                      desc={projects[index].caption}
                     />
                   </div>
-                ))}
-              </div>
-            </div>
-            <div className="flex justify-start" style={{ width: '50%' }}>
-             <div className="flex flex-col">
-                {projects.filter((_, index) => index % 2 === 1).map((project, index) => (
-                  <div key={index} className="">
-                    <ProjectsCard
-                      name={project.name}
-                      image={project.image}
-                      desc={project.desc}
-                      tools={project.tools}
-                      height={project.height}
-                      link={project.link}
-                    />
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-          {/* Mobile */}
-          <div className="lg:hidden flex flex-col gap-5 items-center">
-            {projects.map((project, index) => (
-              <div key={index} className="">
-                <ProjectsCard
-                  name={project.name}
-                  image={project.image}
-                  desc={project.desc}
-                  tools={project.tools}
-                  height={project.height}
-                  link={project.link}
-                />
-              </div>
-            ))}
-          </div>
-        </motion.div>
-      </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </div>
+      </motion.div>
 
       <div className='absolute right-[-650px] lg:right-[-250px] top-[-40px] lg:top-[-60px] blur-[10px] opacity-50 rotate-180'>
         <Image

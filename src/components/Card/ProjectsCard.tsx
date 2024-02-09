@@ -10,12 +10,9 @@ interface CardProps {
   name: string;
   image: StaticImageData;
   desc: string;
-  tools: string[];
-  height: number;
-  link: string;
 }
 
-const Card = ({ name, image, desc, tools, height, link }: CardProps): JSX.Element => {
+const Card = ({ name, image, desc }: CardProps): JSX.Element => {
   const [onHover, setOnHover] = useState(false);
   const [showText, setShowText] = useState(false);
 
@@ -25,7 +22,7 @@ const Card = ({ name, image, desc, tools, height, link }: CardProps): JSX.Elemen
     if (onHover) {
       timer = setTimeout(() => {
         setShowText(true);
-      }, 400);
+      }, 200);
     } else {
       setShowText(false);
     }
@@ -36,52 +33,39 @@ const Card = ({ name, image, desc, tools, height, link }: CardProps): JSX.Elemen
   }, [onHover]);
 
   return (
-    <Link href={link}>
+    <div
+      className={`relative flex overflow-hidden justify-center transition-all ease-in-out duration-500`}
+      style={{
+        borderRadius: '20px',
+        transform: onHover ? 'scale(0.95)' : 'scale(1)',
+        minHeight: '400px',
+        maxWidth: '400px',
+      }}
+      onMouseEnter={() => setOnHover(true)}
+      onMouseLeave={() => {
+        setTimeout(() => setOnHover(false), 300);
+        setShowText(false);
+      }}
+    >
+      <Image
+        src={image}
+        alt='img'
+        layout='fill'
+        objectFit='cover'
+        placeholder='blur'
+        className='transition-all ease-in-out duration-500'
+        style={{ borderRadius: '20px', transform: onHover ? 'scale(1.2)' : 'scale(1)' }}
+      />
       <div
-        className={`relative flex overflow-hidden justify-center transition-all ease-in-out duration-500`}
-        style={{
-          borderRadius: '20px',
-          transform: onHover ? 'scale(0.95)' : 'scale(1)',
-          minHeight: `${height}px`,
-          maxWidth: '400px',
-        }}
-        onMouseEnter={() => setOnHover(true)}
-        onMouseLeave={() => {
-          setTimeout(() => setOnHover(false), 300);
-          setShowText(false);
-        }}
-      >
-        <Image
-          src={image}
-          alt='img'
-          layout='fill'
-          objectFit='cover'
-          placeholder='blur'
-          className='transition-all ease-in-out duration-500'
-          style={{ borderRadius: '20px', transform: onHover ? 'scale(1.2)' : 'scale(1)' }}
-        />
-        <div
-        className={`relative flex flex-col justify-end w-full bg-secondary cursor-pointer px-7 ease-in-out ${
-          showText ? 'opacity-80 transition-opacity duration-500' : 'opacity-0'
-        }`}
-        style={{ transition: 'opacity 0.5s ease-in-out' }}
-      >
-        <h2 className='font-bold text-2xl'>{name}</h2>
-        <h3>{desc}</h3>
-        {/* Tools */}
-        <div className='flex flex-wrap mt-3 mb-5'>
-          {tools.map((tool, index) => (
-            <h4
-              key={index}
-              className='bg-primary text-secondary px-3 py-1 rounded-[10px] text-sm font-semibold mr-2 mb-2 cursor-default hover:translate-y-[-4px] transition-all duration-300 ease-in-out'
-            >
-              {tool}
-            </h4>
-          ))}
-        </div>
-      </div>
+      className={`text-start relative flex flex-col justify-end w-full bg-secondary cursor-pointer px-7 ease-in-out pb-5 ${
+        showText ? 'opacity-80 transition-opacity duration-500' : 'opacity-0'
+      }`}
+      style={{ transition: 'opacity 0.5s ease-in-out' }}
+    >
+      <h2 className='font-bold text-2xl'>{name}</h2>
+      <h3>{desc}</h3>
     </div>
-  </Link>
+  </div>
   );
 };
 
