@@ -98,9 +98,11 @@ const Drawer = ({ name, date, desc, tools, link, github, isOpened, onClose }: Dr
           </div>
         </div>
         <div className="flex justify-center gap-5 px-5 py-5">
-          <Button onClick={() => window.open(link, "_blank")} variant="outline" className='w-20'>
-            Visit
-          </Button>
+          { link && (
+            <Button onClick={() => window.open(link, "_blank")} variant="outline" className='w-20'>
+              Visit
+            </Button>
+          )}
           <Button onClick={() => window.open(github, "_blank")} variant="outline" className='w-20'>
             Github
           </Button>

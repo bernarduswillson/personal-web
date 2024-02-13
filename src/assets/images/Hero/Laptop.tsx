@@ -45,7 +45,7 @@ const Laptop = (): JSX.Element => {
             objectFit: 'contain',
             width: '100%',
             height: '100%',
-            maxWidth: '700px',
+            maxWidth: '500px',
             maxHeight: '100%',
           }}
         />

@@ -20,7 +20,7 @@ interface ProjectDetails {
   date: string;
   desc: string;
   tools: string[];
-  link: string;
+  link?: string;
   github: string;
 }
 
@@ -33,8 +33,21 @@ const Page = (): JSX.Element => {
     setIsDrawerOpen(true);
   };
 
+  const [loading, setLoading] = useState(true);
+  const [loading2, setLoading2] = useState(true);
+
+  useEffect(() => {
+    setLoading(false);
+    setTimeout(() => {
+      setLoading2(false);
+    }, 500);
+  }, []);
+
   return (
-    <div className='h-[500vh] relative overflow-hidden'>
+    <div className="h-[500vh] relative overflow-hidden">
+      <div className={`fixed top-0 left-0 h-screen w-screen dark:bg-black bg-[#FFFFFF] transition-opacity duration-500 ${loading ? 'opacity-100' : 'opacity-0'} ${loading2 ? 'z-[100]' : 'z-[-100]'}`}>
+
+      </div>
       <Navbar />
       <Sidebar />
       <Drawer

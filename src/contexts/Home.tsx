@@ -160,7 +160,7 @@ const Hero = (): JSX.Element => {
         />
       </div>
       <motion.div
-        className='absolute top-[5vw] right-[10vw] lg:w-[5vw] rotate-[70deg] w-[60px] opacity-80'
+        className='absolute top-[5vw] right-[10vw] lg:w-[7vw] rotate-[70deg] w-[60px] opacity-80'
         style={{ y: y1, rotate: r1 }}
       >
         <Image
@@ -168,17 +168,8 @@ const Hero = (): JSX.Element => {
           alt="Diamond"
         />
       </motion.div>
-      <motion.div
-        className='absolute lg:top-[30vh] lg:w-[4vw] rotate-[-50deg] top-[40vh] left-[5vw] w-[50px] z-[6] opacity-80'
-        style={{ y: y2, rotate: r2 }}
-      >
-        <Image
-          src={Diamond}
-          alt="Diamond"
-        />
-      </motion.div>
       <motion.div 
-        className='absolute lg:bottom-[5vw] lg:left-[30vw] lg:w-[8vw] bottom-[5vw] right-[5vw] w-[80px] z-[6] opacity-80'
+        className='absolute lg:bottom-[20vh] lg:left-[45vw] lg:w-[5vw] bottom-[50vh] left-[5vw] w-[50px] z-[6] opacity-80'
         style={{ y: y3, rotate: r3 }}
       >
         <Image

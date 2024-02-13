@@ -4,6 +4,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
+import Image from "next/image";
 
 // Utils
 import { getSectionHeight } from '@/lib/sectionHeight';
@@ -13,6 +14,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/components/ui/use-toast"
+import Code from '@/assets/images/Illustration/Code.svg';
 
 const Contact = (): JSX.Element => { 
   // Projects and Contact's section height
@@ -157,6 +159,14 @@ const Contact = (): JSX.Element => {
             </div>
           </form>
         </motion.div>
+      </div>
+
+      {/* Illustration */}
+      <div className='absolute left-[-600px] lg:left-[-250px] top-[-120px] lg:top-[-60px] blur-[10px] opacity-50'>
+        <Image
+          src={Code}
+          alt="Code"
+        />
       </div>
     </div>
   );

@@ -12,7 +12,6 @@ import { getSectionHeight } from '@/lib/sectionHeight';
 // Assets
 import Code from '@/assets/images/Illustration/Code.svg';
 import ProjectsCard from '@/components/Card/ProjectsCard';
-import Toco from '@/assets/images/Projects/Toco.jpg';
 import {
   Carousel,
   CarouselContent,
@@ -20,78 +19,81 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel"
+import SRE from '@/assets/images/Projects/SRE.png';
+import Wispril from '@/assets/images/Projects/Wispril.png';
+import Arkavidia from '@/assets/images/Projects/Arkavidia.png';
+import Toco from '@/assets/images/Projects/Toco.png';
+import DermaticaAI from '@/assets/images/Projects/DermaticaAI.png';
+import GJ from '@/assets/images/Projects/GJ.png';
+import Dailify from '@/assets/images/Projects/Dailify.png';
 
 // Projects data
 const projects = [
   {
     name: "SRE & IYREF Website",
-    image: Toco,
-    caption: "Ezz website.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.",
-    desc: "As the Director of IT Development at SRE ITB, I led the creation and maintenance of a web app showcasing the organization's profile and updates. Simultaneously, as the IT Manager at IYREF, I oversaw a similar web app, providing detailed information and real-time updates. As the Director of IT Development at SRE ITB, I led the creation and maintenance of a web app showcasing the organization's profile and updates. Simultaneously, as the IT Manager at IYREF, I oversaw a similar web app, providing detailed information and real-time updates.",
+    image: SRE,
+    caption: "A website showcasing the profile of the Society Renewable Energy ITB and IYREF.",
+    desc: "As the Director of IT Development at SRE ITB, I led the creation and maintenance of a web app showcasing the organization's profile and updates. Simultaneously, as the IT Manager at IYREF, I oversaw a similar web app, providing detailed information and real-time updates.",
     tools: ["Next.js", "Tailwind CSS", "Express.js", "Prisma", "MySQL"],
-    date: "1 May 2003",
+    date: "July 2023",
     link: "https://sreitb.com",
-    github: "https://github.com/bernarduswillson"
+    github: "https://github.com/bernarduswillson/SRE-ITB-frontend"
+  },
+  {
+    name: "Parade Wisuda April Website",
+    image: Wispril,
+    caption: "A website showcasing information about the April 2023 graduation at ITB.",
+    desc: "As the Head of Software Engineering, I led a team of 11 members to develop a web application highlighting information about the April 2023 graduation at ITB, featuring an exhibition of graduating students' final projects.",
+    tools: ["Next.js", "Tailwind CSS"],
+    date: "February 2023",
+    link: "https://wisuda-april2023-frontend.vercel.app",
+    github: "https://github.com/bernarduswillson/WisudaApril2023-frontend"
+  },
+  {
+    name: "Arkavidia 8.0 Website",
+    image: Arkavidia,
+    caption: "A website for the annual IT events & competitions organized by HMIF ITB.",
+    desc: "I developed Home Hero, Event Hero, and About sections for a web application designed to provide comprehensive information about an IT competition, encompassing registration details and other pertinent information.",
+    tools: ["Next.js", "Tailwind CSS"],
+    date: "September 2022",
+    link: "https://arkavidia-frontend-8-0.vercel.app/",
+    github: "https://github.com/bernarduswillson/arkavidia-frontend-8.0"
   },
   {
     name: "Toco",
     image: Toco,
-    caption: "LOREMMMLorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.",
-    desc: "Lorem Ipsum.",
-    tools: ["HTML5", "CSS", "JavaScript", "React", "Tailwind CSS", "Express.js", "PHP"],
-    date: "1 May 2003",
-    link: "https://sreitb.com",
-    github: "https://github.com/bernarduswillson"
+    caption: "A web application designed to help users learn a new language.",
+    desc: "I developed a multifaceted language-learning project, consisting of a web application aiding users in language acquisition, a single-page application for administrative content management on toco-app, and two distinct repositories for a RESTful API communication web service and a SOAP protocol web service.",
+    tools: ["PHP", "HTML5", "CSS", "JavaScript", "React.js", "Tailwind CSS", "Express.js", "Prisma", "MySQL", "JAX-WS", "Docker"],
+    date: "November 2023",
+    github: "https://github.com/bernarduswillson/toco-app"
   },
   {
-    name: "Toco",
-    image: Toco,
-    caption: "LOREMMMLorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.",
-    desc: "Lorem Ipsum.",
-    tools: ["HTML5", "CSS", "JavaScript", "React", "Tailwind CSS", "Express.js", "PHP"],
-    date: "1 May 2003",
-    link: "https://sreitb.com",
-    github: "https://github.com/bernarduswillson"
+    name: "DermaticaAI",
+    image: DermaticaAI,
+    caption: "An Android application about skin health and diseases.",
+    desc: "I developed an Android application featuring skin disease detection, chatbot consultation, and real-time updates on skin conditions for the Compfest 2023 competition.",
+    tools: ["Flutter", "Firebase"],
+    date: "July 2023",
+    github: "https://github.com/bernarduswillson/DermaticaAI"
   },
   {
-    name: "Toco",
-    image: Toco,
-    caption: "LOREMMMLorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.",
-    desc: "Lorem Ipsum.",
-    tools: ["HTML5", "CSS", "JavaScript", "React", "Tailwind CSS", "Express.js", "PHP"],
-    date: "1 May 2003",
-    link: "https://sreitb.com",
-    github: "https://github.com/bernarduswillson"
+    name: "Gangguan Jawa",
+    image: GJ,
+    caption: "A business management application with Object-Oriented Programming approach.",
+    desc: "I developed a business management application with an Object-Oriented Programming approach encompassing functionalities such as transaction processing, inventory restocking, membership management, and more.",
+    tools: ["JavaFx"],
+    date: "April 2023",
+    github: "https://github.com/bernarduswillson/BM-App"
   },
   {
-    name: "Toco",
-    image: Toco,
-    caption: "LOREMMMLorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.",
-    desc: "Lorem Ipsum.",
-    tools: ["HTML5", "CSS", "JavaScript", "React", "Tailwind CSS", "Express.js", "PHP"],
-    date: "1 May 2003",
-    link: "https://sreitb.com",
-    github: "https://github.com/bernarduswillson"
-  },
-  {
-    name: "Toco",
-    image: Toco,
-    caption: "LOREMMMLorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.",
-    desc: "Lorem Ipsum.",
-    tools: ["HTML5", "CSS", "JavaScript", "React", "Tailwind CSS", "Express.js", "PHP"],
-    date: "1 May 2003",
-    link: "https://sreitb.com",
-    github: "https://github.com/bernarduswillson"
-  },
-  {
-    name: "Toco",
-    image: Toco,
-    caption: "LOREMMMLorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.Lorem Ipsum.",
-    desc: "Lorem Ipsum.",
-    tools: ["HTML5", "CSS", "JavaScript", "React", "Tailwind CSS", "Express.js", "PHP"],
-    date: "1 May 2003",
-    link: "https://sreitb.com",
-    github: "https://github.com/bernarduswillson"
+    name: "Dailify",
+    image: Dailify,
+    caption: "An all-in-one diary and planner app for seamless organization of daily activities.",
+    desc: "I developed a diary and planner application that allows users to create daily journals, set up a daily planner, establish goals, and include motivational elements.",
+    tools: ["PyQt", "SQLite"],
+    date: "April 2023",
+    github: "https://github.com/bernarduswillson/Dailify"
   },
 ];
 
