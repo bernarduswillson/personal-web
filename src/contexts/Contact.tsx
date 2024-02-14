@@ -162,7 +162,7 @@ const Contact = (): JSX.Element => {
       </div>
 
       {/* Illustration */}
-      <div className='absolute left-[-600px] lg:left-[-250px] top-[-120px] lg:top-[-60px] blur-[10px] opacity-50'>
+      <div className='absolute left-[-600px] lg:left-[-250px] top-[-120px] lg:top-[-60px] blur-[10px] opacity-50 z-[40]'>
         <Image
           src={Code}
           alt="Code"

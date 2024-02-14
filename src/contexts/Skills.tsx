@@ -147,7 +147,7 @@ const Skills = (): JSX.Element => {
           alt="Code"
         />
       </div>
-      <div className={`absolute w-[30vw] min-w-[500px] ${mode =='dark' && !loading ? 'blur-0 opacity-30' : 'blur-[10px] opacity-100'}`}>
+      <div className={`absolute w-[30vw] min-w-[500px] ${mode =='dark' && !loading ? 'blur-0 opacity-30' : 'blur-[5px] opacity-100'}`}>
         <Image
           src={Code2}
           alt="Code"

@@ -11,6 +11,7 @@ import { getSectionHeight } from '@/lib/sectionHeight';
 
 // Assets
 import Code from '@/assets/images/Illustration/Code.svg';
+import Ball from '@/assets/images/Illustration/Ball.svg';
 import ProjectsCard from '@/components/Card/ProjectsCard';
 import {
   Carousel,
@@ -26,6 +27,7 @@ import Toco from '@/assets/images/Projects/Toco.png';
 import DermaticaAI from '@/assets/images/Projects/DermaticaAI.png';
 import GJ from '@/assets/images/Projects/GJ.png';
 import Dailify from '@/assets/images/Projects/Dailify.png';
+
 
 // Projects data
 const projects = [
@@ -124,6 +126,11 @@ const Projects = ({ onDrawerOpen }: any): JSX.Element => {
   const { scrollY } = useScroll();
   // translate
   const yt = useTransform(scrollY, [startPixel2 - (height1/2), endPixel2], [250, -500]);
+  const y1 = useTransform(scrollY, [startPixel2 - (height1/2), endPixel2], [1000, -2000]);
+  const y2 = useTransform(scrollY, [startPixel2 - (height1/2), endPixel2], [800, -1600]);
+  // rotate
+  const r1 = useTransform(scrollY, [startPixel2 - (height1/2), endPixel2], [0, 1000]);
+  const r2 = useTransform(scrollY, [startPixel2 - (height1/2), endPixel2], [500, 1500]);
 
   // Drawer
   const [isOpened, setIsOpened] = useState(false);
@@ -180,12 +187,31 @@ const Projects = ({ onDrawerOpen }: any): JSX.Element => {
         </div>
       </motion.div>
 
+      {/* Illustration */}
       <div className='absolute right-[-650px] lg:right-[-250px] top-[-40px] lg:top-[-60px] blur-[10px] opacity-50 rotate-180'>
         <Image
           src={Code}
           alt="Code"
         />
       </div>
+      <motion.div
+        className='absolute lg:left-[3vw] lg:w-[4vw] top-[5vh] left-[-20px] w-[50px] z-[10] opacity-80'
+        style={{ y: y1, rotate: r1 }}
+      >
+        <Image
+          src={Ball}
+          alt="Ball"
+        />
+      </motion.div>
+      <motion.div
+        className='absolute lg:right-[3vw] lg:w-[4vw] bottom-[50vh] right-[-20px] w-[50px] z-[10] opacity-80'
+        style={{ y: y2, rotate: r2 }}
+      >
+        <Image
+          src={Ball}
+          alt="Ball"
+        />
+      </motion.div>
     </div>
   );
 };

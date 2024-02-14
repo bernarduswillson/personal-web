@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useState, useEffect } from 'react';
 import Image from "next/image";
 import Link from "next/link";
+import { useTheme } from "next-themes";
 
 // Utils
 import { getSectionHeight } from '@/lib/sectionHeight';
@@ -14,6 +15,8 @@ import Dots from '@/assets/images/Illustration/Dots';
 import Photo from '@/assets/images/About/Photo.webp';
 import Code from '@/assets/images/Illustration/Code.svg';
 import Diamond from '@/assets/images/Illustration/Diamond.svg';
+import ASCIIB from '@/assets/images/About/ASCIIB.png';
+import ASCIIW from '@/assets/images/About/ASCIIW.png';
 import { Button } from "@/components/ui/button";
 
 const About = (): JSX.Element => {
@@ -40,6 +43,16 @@ const About = (): JSX.Element => {
   const r2 = useTransform(scrollY, [startPixel/3, endPixel], [100, 350]);
   // opacity
   const oi = useTransform(scrollY, [startPixel/3, endPixel], [0.2, 2]);
+
+  // Theme handler
+  const { setTheme, resolvedTheme } = useTheme();
+  const [loading, setLoading] = useState(true);
+  const [mode, setMode] = useState(resolvedTheme);
+  
+  useEffect(() => {
+    setMode(resolvedTheme);
+    setLoading(false);
+  }, [resolvedTheme]);
 
     return (
       <div id="About" className='h-screen relative dark:bg-black bg-[#FFFFFF] transition duration-400 flex items-center justify-center'>
@@ -121,6 +134,12 @@ const About = (): JSX.Element => {
           <Image
             src={Code}
             alt="Code"
+          />
+        </div>
+        <div className={`absolute w-[40vw] min-w-[500px] opacity-10`}>
+          <Image
+            src={mode == "dark" && !loading ? ASCIIW : ASCIIB}
+            alt="ASCII"
           />
         </div>
         <motion.div
