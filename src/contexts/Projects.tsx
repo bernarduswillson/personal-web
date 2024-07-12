@@ -25,6 +25,8 @@ import Wispril from '@/assets/images/Projects/Wispril.png';
 import Arkavidia from '@/assets/images/Projects/Arkavidia.png';
 import Toco from '@/assets/images/Projects/Toco.png';
 import DermaticaAI from '@/assets/images/Projects/DermaticaAI.png';
+import SweepIn from '@/assets/images/Projects/SweepIn.png';
+import BondoMan from '@/assets/images/Projects/BondoMan.png';
 import GJ from '@/assets/images/Projects/GJ.png';
 import Dailify from '@/assets/images/Projects/Dailify.png';
 
@@ -78,6 +80,24 @@ const projects = [
     tools: ["Flutter", "Firebase"],
     date: "July 2023",
     github: "https://github.com/bernarduswillson/DermaticaAI"
+  },
+  {
+    name: "SweepIn",
+    image: SweepIn,
+    caption: "A web application developed in five sprints to manage employee attendance at ITB.",
+    desc: "I developed a web application for managing employee attendance at ITB, featuring functionalities such as attendance tracking, work report tracking, and administrative access to work reports and employee attendance.",
+    tools: ["Next.js", "Tailwind CSS", "Express.js", "Prisma", "MySQL", "Jest"],
+    date: "February 2024",
+    github: "https://github.com/bernarduswillson/SweepIn-FE"
+  },
+  {
+    name: "BondoMan",
+    image: BondoMan,
+    caption: "A mobile application for managing and tracking personal expenses.",
+    desc: "I developed a mobile application for managing personal expenses, featuring functionalities such as income, expense, and saving transaction tracking, as well as a user-friendly interface for seamless financial management.",
+    tools: ["Kotlin"],
+    date: "April 2024",
+    github: "https://github.com/bernarduswillson/BondoMan"
   },
   {
     name: "Gangguan Jawa",

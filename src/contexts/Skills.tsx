@@ -29,7 +29,7 @@ const skills = [
     name: "Web Development",
     image: Web,
     desc: "I excel in full-stack web development, seamlessly integrating front-end and back-end technologies to create efficient and dynamic digital solutions.",
-    tools: ["HTML5", "CSS", "JavaScript", "React", "Next.js", "Tailwind CSS", "Express.js", "Flask", "PHP"]
+    tools: ["HTML5", "CSS", "JavaScript", "TypeScript", "React.js", "Next.js", "Tailwind CSS", "Express.js", "Flask", "PHP", "Docker", "Prisma", "MySQL", "PostgreSQL", "REST API", "SOAP"]
   },
   {
     name: "Software Development",
@@ -41,7 +41,7 @@ const skills = [
     name: "Mobile Development",
     image: Mobile,
     desc: "I am a novice in mobile development, actively learning and gaining foundational skills to create basic mobile applications while exploring different platforms and frameworks.",
-    tools: ["Flutter"]
+    tools: ["Flutter", "React Native", "Kotlin"]
   }
 ];
 

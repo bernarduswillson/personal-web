@@ -102,7 +102,7 @@ const About = (): JSX.Element => {
             </div>
             <div className="text-lg font-normal lg:text-xl opacity-80 text-center lg:text-left leading-tight sm:leading-normal">
               <h2>
-                Currently in my 6th semester and interested in computer-related things such as web development and software development.
+                Currently in my 7th semester and interested in computer-related things such as web development and software development.
               </h2>
               <h2 className="mt-2 hidden sm:block">
                 I consistently seek opportunities to develop my soft and hard skills through volunteers, committees, and projects.
