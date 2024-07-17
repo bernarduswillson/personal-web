@@ -79,8 +79,8 @@ const Sidebar = (): JSX.Element => {
           <div className="h-fit relative flex">
             <div className="w-[1px] bg-primary opacity-60"></div>
             <motion.div
-              className="w-[5px] bg-primary"
-              style={{ scaleY, transformOrigin: 'top', marginTop: '56px', translateX: '-58%' }}
+              className="w-[4.9px] bg-primary"
+              style={{ scaleY, transformOrigin: 'top', marginTop: '56px', translateX: '-53%' }}
             />
             <div className="flex flex-col items-start text-md relative">
               {MENU_LIST.map((menu: Menu) => (
@@ -117,7 +117,7 @@ const Sidebar = (): JSX.Element => {
         <div className="w-[1px] bg-primary opacity-60"></div>
         <motion.div
           className="w-[5px] bg-primary"
-          style={{ scaleY, transformOrigin: 'top', marginTop: '56px', translateX: '-58%' }}
+          style={{ scaleY, transformOrigin: 'top', marginTop: '56px', translateX: '-65%' }}
         />
         <div className="flex flex-col items-start text-md relative">
           {MENU_LIST.map((menu: Menu) => (
